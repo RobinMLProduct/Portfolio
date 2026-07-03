@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robin Moenne Loccoz — Portfolio</title>
+  <title>Robin Moenne Loccoz — Digital Product & Project Consultant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -11,7 +11,10 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">RML</a>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">RML</span>
+    <span class="nav-logo-tag">Shipping great products since 2006</span>
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="experience.html">Experience</a></li>
@@ -20,56 +23,119 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div style="display:flex;gap:0.75rem;align-items:center;">
+    <div class="lang-switcher">
+      <a href="index.html" class="lang-btn active">EN</a>
+      <a href="de/index.html" class="lang-btn">DE</a>
+    </div>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
     <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
   </div>
 </nav>
 
 <main>
+  <!-- AI Teaser Banner -->
+  <div class="ai-teaser" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})">
+    <span class="ai-teaser-badge">✦ AI</span>
+    <span class="ai-teaser-text">Skip the CV — just ask my AI assistant anything about my work</span>
+    <span class="ai-teaser-arrow">↓</span>
+  </div>
+
   <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="section-label">Portfolio</div>
+          <div class="section-label">Independent Consultant · Switzerland</div>
           <h1 class="hero-title">
             <span class="name"><span class="hl">Robin Moenne Loccoz</span></span>
-            <span class="role">Senior Product Manager / Owner &amp; PMP Project Manager</span>
+            <span class="role">Digital Product & Project Consultant · PMP</span>
           </h1>
           <p class="hero-desc">
-            Experienced product and project leader who transforms complex challenges into digital products with real business impact and exceptional user experiences — across loyalty, e-commerce, banking, automotive and travel.
+            I help global companies ship better digital products, faster. Over 12 years I've served clients across loyalty, e-commerce, banking, automotive and travel — turning complex projects into working software and happy users.
           </p>
           <div class="hero-tags">
             <span class="tag">Product Management</span>
             <span class="tag">Agile / SAFe</span>
             <span class="tag">Stakeholder Management</span>
             <span class="tag">UX</span>
-            <span class="tag">Program Leadership</span>
+            <span class="tag">Project Leadership</span>
             <span class="tag">Digital Loyalty</span>
             <span class="tag">PMP Certified</span>
+            <span class="tag">Generative AI</span>
+            <span class="tag">Agentic AI</span>
           </div>
           <div class="hero-btns">
-            <a href="experience.html" class="btn btn-primary">View Experience →</a>
-            <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+            <a href="experience.html" class="btn btn-primary">View Client Work →</a>
+            <a href="contact.html" class="btn btn-secondary">Work with me</a>
+          </div>
+
+          <!-- Contact strip -->
+          <div class="hero-contact">
+            <a href="mailto:moenneloccoz@gmail.com" class="hero-contact-item">
+              <span class="hero-contact-icon">✉</span>
+              moenneloccoz@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/moenneloccoz/" target="_blank" rel="noopener" class="hero-contact-item">
+              <span class="hero-contact-icon">🔗</span>
+              linkedin.com/in/moenneloccoz
+            </a>
           </div>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-card">
-            <span class="stat-number">12+</span>
-            <div class="stat-label">Years leading digital products</div>
+        <!-- Photo + stats -->
+        <div class="hero-right">
+          <div class="hero-photo-wrap">
+            <img src="robin.jpg" alt="Robin Moenne Loccoz" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="hero-photo-placeholder">RML</div>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">40+</span>
-            <div class="stat-label">FTEs managed globally</div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">12+</span>
+              <div class="stat-label">Years leading digital products</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">40+</span>
+              <div class="stat-label">FTEs managed globally</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">6</span>
+              <div class="stat-label">Industries served</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">3</span>
+              <div class="stat-label">Languages: EN · FR · DE</div>
+            </div>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">6</span>
-            <div class="stat-label">Industries served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Chat section -->
+  <section class="chat-section" id="chat-section">
+    <div class="container">
+      <div class="chat-cta-wrap">
+        <div class="chat-cta-left">
+          <div class="section-label" style="border-color: var(--hl);">Powered by Claude AI</div>
+          <h2>Have a question about my work?</h2>
+          <p style="margin-top:0.5rem;max-width:480px;">My AI assistant knows my entire career history, client engagements, and skill set. Ask it anything — it's faster than reading the CV and marginally funnier.</p>
+        </div>
+        <div class="chat-cta-right">
+          <div class="chat-inline-suggestions">
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">What industries have you worked in?</button>
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">Have you led large remote teams?</button>
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">Are you available for new projects?</button>
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">What's your biggest success story?</button>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">3</span>
-            <div class="stat-label">Languages: EN · FR · DE</div>
+          <div class="chat-inline-input-row">
+            <input
+              id="chat-inline-input"
+              type="text"
+              placeholder="Ask Robin's AI assistant anything…"
+              maxlength="500"
+              onkeydown="if(event.key==='Enter')openChatWith(this.value)"
+            />
+            <button class="btn btn-primary" onclick="openChatWith(document.getElementById('chat-inline-input').value)">Ask →</button>
           </div>
         </div>
       </div>
@@ -79,35 +145,35 @@
   <!-- Overview cards -->
   <section style="padding:4rem 0; background:var(--bg-alt); border-bottom:1px solid var(--border);">
     <div class="container">
-      <div class="section-label">What you'll find</div>
+      <div class="section-label">What I bring to your project</div>
       <h2>A track record across industries</h2>
       <div class="overview-grid">
 
         <a href="experience.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">💼</div>
-          <h3>Experience</h3>
-          <p>From Lloyds Banking Group to BMW, Avolta and SWISS — leading complex digital programmes at global brands.</p>
+          <h3>Client Experience</h3>
+          <p>From Lloyds Banking Group to BMW, Avolta and SWISS — I've led complex digital programmes at global brands and delivered.</p>
           <span class="overview-card-link">Explore →</span>
         </a>
 
         <a href="education.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">🎓</div>
-          <h3>Education &amp; Certifications</h3>
+          <h3>Certifications</h3>
           <p>PMP, SAFe, AWS Cloud Practitioner, Google Cloud Digital Leader, Master's degree from Paris.</p>
           <span class="overview-card-link">Explore →</span>
         </a>
 
         <a href="testimonials.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">💬</div>
-          <h3>Testimonials</h3>
-          <p>First-hand feedback from clients, directors and teammates across every major engagement.</p>
-          <span class="overview-card-link">Explore →</span>
+          <h3>Client Testimonials</h3>
+          <p>Don't take my word for it — here's what senior directors and clients have said about working with me.</p>
+          <span class="overview-card-link">Read →</span>
         </a>
 
         <a href="contact.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">✉</div>
-          <h3>Contact</h3>
-          <p>Based in Switzerland. Available for new opportunities — let's connect on LinkedIn or by email.</p>
+          <h3>Work with me</h3>
+          <p>Based in Switzerland, available globally. Open to contracts, interim mandates, and consulting engagements.</p>
           <span class="overview-card-link">Get in touch →</span>
         </a>
 
@@ -135,10 +201,14 @@
             <span class="tag">Cross-vendor coordination</span>
             <span class="tag">Agile coaching</span>
             <span class="tag">Mobile (iOS &amp; Android)</span>
+            <span class="tag">Generative AI</span>
+            <span class="tag">Agentic AI</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">Context Engineering</span>
           </div>
         </div>
         <div>
-          <h3 style="margin-bottom:1rem;">Industries</h3>
+          <h3 style="margin-bottom:1rem;">Industries I've Served</h3>
           <div class="pill-grid">
             <span class="tag">Loyalty &amp; retail travel</span>
             <span class="tag">E-commerce &amp; marketplace</span>
@@ -155,14 +225,310 @@
 
 <footer>
   <div class="container">
-    Robin Moenne Loccoz &mdash; Senior PM / PO &mdash; <a href="mailto:robin.moenneloccoz@cognizant.com">robin.moenneloccoz@cognizant.com</a>
+    Robin Moenne Loccoz &mdash; Digital Product &amp; Project Consultant &mdash;
+    <a href="mailto:moenneloccoz@gmail.com">moenneloccoz@gmail.com</a>
   </div>
 </footer>
 
 <div id="color-picker"></div>
+
+<!-- Chat Modal -->
+<div id="chat-modal-overlay" onclick="if(event.target===this)closeChatModal()">
+  <div id="chat-modal">
+    <div id="chat-modal-header">
+      <div>
+        <div style="font-weight:700;font-size:0.95rem;">Robin's AI Assistant</div>
+        <div style="font-size:0.75rem;opacity:0.7;">Powered by Claude · Knows everything about Robin</div>
+      </div>
+      <button onclick="closeChatModal()" aria-label="Close">✕</button>
+    </div>
+    <div id="chat-modal-messages">
+      <div class="chat-msg bot">Hey! I'm Robin's AI assistant — I know his entire career history, skills, and what he's been up to. What would you like to know?</div>
+    </div>
+    <div id="chat-modal-input-row">
+      <input id="chat-modal-input" type="text" placeholder="Ask anything…" maxlength="500"
+        onkeydown="if(event.key==='Enter')sendModalMessage()" autofocus />
+      <button onclick="sendModalMessage()" id="chat-modal-send">→</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ── AI Teaser Banner ── */
+.ai-teaser {
+  position: sticky; top: 60px; z-index: 90;
+  display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--hl); color: var(--hl-dark);
+  font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; text-align: center;
+  transition: opacity 0.2s;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.ai-teaser:hover { opacity: 0.88; }
+
+.ai-teaser-badge {
+  background: var(--hl-dark); color: var(--hl);
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem; border-radius: 100px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.ai-teaser-arrow {
+  font-size: 1rem; flex-shrink: 0;
+  animation: bounce-down 1.4s ease-in-out infinite;
+}
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4px); }
+}
+@media (max-width: 480px) {
+  .ai-teaser { font-size: 0.78rem; gap: 0.5rem; padding: 0.65rem 1rem; }
+  .ai-teaser-text { flex: 1; }
+}
+
+/* ── Hero photo ── */
+.hero-right { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+
+.hero-photo-wrap { position: relative; width: 200px; height: 200px; flex-shrink: 0; }
+
+.hero-photo {
+  width: 200px; height: 200px; border-radius: 50%;
+  object-fit: cover; object-position: top;
+  border: 3px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  display: block;
+}
+
+.hero-photo-placeholder {
+  display: none;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: var(--bg-alt); border: 3px solid var(--border);
+  align-items: center; justify-content: center;
+  font-size: 2rem; font-weight: 700; color: var(--fg-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Hero contact strip ── */
+.hero-contact {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.hero-contact-item {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.82rem; color: var(--fg-muted);
+  transition: color 0.2s;
+}
+
+.hero-contact-item:hover { color: var(--fg); }
+.hero-contact-icon { font-size: 0.9rem; flex-shrink: 0; }
+
+/* ── AI Chat section ── */
+#chat-section { scroll-margin-top: 106px; }
+.chat-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.chat-cta-wrap {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: center;
+}
+
+.chat-inline-suggestions {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chat-suggestion {
+  font-size: 0.78rem; font-weight: 500;
+  padding: 0.4rem 0.85rem; border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-alt); color: var(--fg-muted);
+  cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.chat-suggestion:hover {
+  border-color: var(--fg); color: var(--fg);
+  background: var(--bg);
+}
+
+.chat-inline-input-row {
+  display: flex; gap: 0.6rem; align-items: center;
+}
+
+#chat-inline-input {
+  flex: 1; padding: 0.7rem 1rem;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  background: var(--bg); color: var(--fg);
+  font-size: 0.9rem; font-family: inherit; outline: none;
+  transition: border-color 0.2s;
+}
+#chat-inline-input:focus { border-color: var(--fg); }
+
+/* ── Chat Modal ── */
+#chat-modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+}
+#chat-modal-overlay.open { display: flex; }
+
+#chat-modal {
+  display: flex; flex-direction: column;
+  width: 100%; max-width: 520px; height: 560px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+  margin: 1rem;
+  overflow: hidden;
+  animation: modal-in 0.2s ease;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+#chat-modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 1.4rem;
+  background: var(--fg); color: var(--bg);
+  flex-shrink: 0;
+}
+#chat-modal-header button {
+  background: none; border: none; color: var(--bg);
+  cursor: pointer; font-size: 1.1rem; line-height: 1;
+  opacity: 0.7; transition: opacity 0.15s;
+}
+#chat-modal-header button:hover { opacity: 1; }
+
+#chat-modal-messages {
+  flex: 1; overflow-y: auto; padding: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+
+.chat-msg {
+  max-width: 82%; padding: 0.65rem 1rem;
+  border-radius: 12px; font-size: 0.875rem; line-height: 1.55;
+}
+.chat-msg.bot {
+  background: var(--bg-alt); color: var(--fg);
+  align-self: flex-start; border-bottom-left-radius: 3px;
+}
+.chat-msg.user {
+  background: var(--fg); color: var(--bg);
+  align-self: flex-end; border-bottom-right-radius: 3px;
+}
+.chat-msg.typing { opacity: 0.5; font-style: italic; }
+
+#chat-modal-input-row {
+  display: flex; gap: 0.5rem; padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+#chat-modal-input {
+  flex: 1; padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  background: var(--bg); color: var(--fg);
+  font-size: 0.875rem; font-family: inherit; outline: none;
+  transition: border-color 0.2s;
+}
+#chat-modal-input:focus { border-color: var(--fg); }
+#chat-modal-send {
+  background: var(--fg); color: var(--bg);
+  border: none; border-radius: 8px;
+  padding: 0.65rem 1.1rem; cursor: pointer;
+  font-size: 1rem; font-weight: 600;
+  transition: opacity 0.2s;
+}
+#chat-modal-send:hover { opacity: 0.8; }
+#chat-modal-send:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .chat-cta-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-right { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
+  .hero-photo-wrap { width: 120px; height: 120px; }
+  .hero-photo, .hero-photo-placeholder { width: 120px; height: 120px; }
+}
+</style>
+
+<script>
+let messageCount = 0;
+const MAX_MESSAGES = 10;
+
+function openChatWith(text) {
+  const overlay = document.getElementById('chat-modal-overlay');
+  overlay.classList.add('open');
+  const input = document.getElementById('chat-modal-input');
+  if (text && text.trim()) {
+    input.value = text.trim();
+    sendModalMessage();
+  } else {
+    input.focus();
+  }
+  document.getElementById('chat-inline-input').value = '';
+}
+
+function closeChatModal() {
+  document.getElementById('chat-modal-overlay').classList.remove('open');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeChatModal();
+});
+
+async function sendModalMessage() {
+  const input = document.getElementById('chat-modal-input');
+  const text = input.value.trim();
+  if (!text) return;
+
+  if (messageCount >= MAX_MESSAGES) {
+    addModalMessage('You\'ve hit the message limit — even AI assistants need a break. Email Robin directly: robin.moenneloccoz@cognizant.com', 'bot');
+    return;
+  }
+
+  addModalMessage(text, 'user');
+  input.value = '';
+  messageCount++;
+
+  const typing = addModalMessage('Thinking…', 'bot typing');
+  document.getElementById('chat-modal-send').disabled = true;
+
+  try {
+    const res = await fetch('/.netlify/functions/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text }),
+    });
+    const data = await res.json();
+    typing.remove();
+    addModalMessage(data.reply || 'Something went wrong on my end. Try again?', 'bot');
+  } catch {
+    typing.remove();
+    addModalMessage('Network hiccup — please try again or reach out to Robin directly.', 'bot');
+  }
+
+  document.getElementById('chat-modal-send').disabled = false;
+  input.focus();
+}
+
+function addModalMessage(text, type) {
+  const msgs = document.getElementById('chat-modal-messages');
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + type;
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+</script>
+
 <script src="nav.js"></script>
-<script src="chat-widget.js"></script>
 </body>
 </html>
-
-

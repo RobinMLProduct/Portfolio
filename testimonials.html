@@ -11,7 +11,10 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">RML</a>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">RML</span>
+    <span class="nav-logo-tag">Shipping great products since 2006</span>
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="experience.html">Experience</a></li>
@@ -20,6 +23,10 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div style="display:flex;gap:0.75rem;align-items:center;">
+    <div class="lang-switcher">
+      <a href="testimonials.html" class="lang-btn active">EN</a>
+      <a href="de/testimonials.html" class="lang-btn">DE</a>
+    </div>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
     <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
   </div>
@@ -29,7 +36,7 @@
   <div class="page-header">
     <div class="container">
       <div class="section-label">What people say</div>
-      <h1><span class="hl">Customer Testimonials</span></h1>
+      <h1><span class="hl">Client Testimonials</span></h1>
       <p style="margin-top:0.75rem;max-width:600px;">First-hand feedback from clients, senior directors, colleagues and teammates across every major engagement.</p>
     </div>
   </div>
@@ -41,29 +48,46 @@
         <!-- Avolta -->
         <div class="testimony-group">
           <div class="testimony-group-header">
-            <div>
-              <div class="company">Avolta (ex-Dufry)</div>
+            <div class="company-logo company-logo--avolta">AV</div>
+            <div class="testimony-group-meta">
+              <div class="company">Avolta <span style="font-weight:400;color:var(--fg-muted);">(ex-Dufry)</span></div>
               <div class="period">Global Digital Loyalty · May 2024 – Oct. 2025</div>
+              <a href="experience.html#avolta" class="testimony-exp-link">View what I did there →</a>
             </div>
           </div>
           <div class="testimonies">
 
             <div class="testimony">
               <blockquote>Robin brought an excellent attitude to our account and felt like a natural extension of the team. He established trust with his peer group quickly and built credibility with senior stakeholders through transparency and regular communication. Robin invested himself in his product responsibility and developed features with heart, levity and a user focus. He was a delight to work with.</blockquote>
-              <div class="testimony-author">Anthony Chierruzi</div>
-              <div class="testimony-role">Global Director, Digital — Avolta</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">A.C.</div>
+                <div>
+                  <div class="testimony-author">A.C.</div>
+                  <div class="testimony-role">Global Director, Digital — Avolta</div>
+                </div>
+              </div>
             </div>
 
             <div class="testimony">
               <blockquote>Few people can keep things so professional while also making everyone laugh along the way. Your humor and digital spark have made work brighter.</blockquote>
-              <div class="testimony-author">Paula Alvarez</div>
-              <div class="testimony-role">Global / Regional Digital Commerce Manager — Avolta</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">P.A.</div>
+                <div>
+                  <div class="testimony-author">P.A.</div>
+                  <div class="testimony-role">Global / Regional Digital Commerce Manager — Avolta</div>
+                </div>
+              </div>
             </div>
 
             <div class="testimony">
               <blockquote>Robin played a pivotal role in helping us achieve the business KPIs for both 2024 and 2025, including the successful launch of Club Avolta's rebranding. Robin's motivation and dedication have remained unwavering despite significant organizational changes with material impact. Robin has demonstrated exceptional ability to work smoothly across onsite, offshore, and nearshore setups.</blockquote>
-              <div class="testimony-author">A., Senior Programme Manager</div>
-              <div class="testimony-role">Avolta</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">A.</div>
+                <div>
+                  <div class="testimony-author">A.</div>
+                  <div class="testimony-role">Senior Programme Manager — Avolta</div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -72,35 +96,57 @@
         <!-- BMW -->
         <div class="testimony-group">
           <div class="testimony-group-header">
-            <div>
+            <div class="company-logo company-logo--bmw">BMW</div>
+            <div class="testimony-group-meta">
               <div class="company">BMW Group</div>
               <div class="period">Big Data for Connected Vehicles · Feb. 2021 – Nov. 2023</div>
+              <a href="experience.html#bmw" class="testimony-exp-link">View what I did there →</a>
             </div>
           </div>
           <div class="testimonies">
 
             <div class="testimony">
               <blockquote>As the main contact for BMW, you demonstrated very good communication skills. You kept us informed throughout the development process and especially in case of unforeseen problems. You were supportive and encouraged everyone to do their best. Even in hard times you took the time to understand the root cause of any issues and found ways to improve. As a result, we saw improvements in our team's performance and delivery quality.</blockquote>
-              <div class="testimony-author">Bernd Streppel</div>
-              <div class="testimony-role">Lead, Vehicle Related Data @ Group IT — BMW Munich</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">B.S.</div>
+                <div>
+                  <div class="testimony-author">B.S.</div>
+                  <div class="testimony-role">Lead, Vehicle Related Data @ Group IT — BMW Munich</div>
+                </div>
+              </div>
             </div>
 
             <div class="testimony">
               <blockquote>I particularly appreciated your positive attitude towards it and the professional way in which you prepared the trackers, documentation and meetings. You also kept the team motivated and able to deliver until the last day.</blockquote>
-              <div class="testimony-author">Daniel Neumeier</div>
-              <div class="testimony-role">Data Engineer, Data Business Object In-Vehicle — BMW Group</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">D.N.</div>
+                <div>
+                  <div class="testimony-author">D.N.</div>
+                  <div class="testimony-role">Data Engineer, Data Business Object In-Vehicle — BMW Group</div>
+                </div>
+              </div>
             </div>
 
             <div class="testimony">
               <blockquote>I truly admire your positiveness, transparency to the client and amazing capability in communication and persuasion skills. I was lucky to work in an organization which was run by you.</blockquote>
-              <div class="testimony-author">Koray Kocak</div>
-              <div class="testimony-role">Lead Big Data Engineer — BMW Group</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">K.K.</div>
+                <div>
+                  <div class="testimony-author">K.K.</div>
+                  <div class="testimony-role">Lead Big Data Engineer — BMW Group</div>
+                </div>
+              </div>
             </div>
 
             <div class="testimony">
               <blockquote>Robin's positivity is infectious and his ability to bring joy and enthusiasm into any discussion, no matter how tricky the situation, has been a source of inspiration for the team. Robin is an exceptional product owner &amp; team lead with an outstanding skillset, a positive attitude, and an ability to navigate complex situations with ease.</blockquote>
-              <div class="testimony-author">Jonas Ertel</div>
-              <div class="testimony-role">Lead Big Data Engineer — BMW Group</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">J.E.</div>
+                <div>
+                  <div class="testimony-author">J.E.</div>
+                  <div class="testimony-role">Lead Big Data Engineer — BMW Group</div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -109,17 +155,24 @@
         <!-- Vaillant -->
         <div class="testimony-group">
           <div class="testimony-group-header">
-            <div>
+            <div class="company-logo company-logo--vaillant">VG</div>
+            <div class="testimony-group-meta">
               <div class="company">Vaillant Group</div>
               <div class="period">Data Entry Tool China · Oct. 2020 – Jan. 2021</div>
+              <a href="experience.html#vaillant" class="testimony-exp-link">View what I did there →</a>
             </div>
           </div>
           <div class="testimonies">
 
             <div class="testimony">
               <blockquote>Robin jumped into his roles as Scrum Master, my deputy (Product Owner) and the project manager. He has coordinated and ramped up the project from scratch and he managed the entire project also from content perspective. I have to thank him specially because he understood and defended what Vaillant wanted to achieve. Great!</blockquote>
-              <div class="testimony-author">Thorsten Krieger</div>
-              <div class="testimony-role">Head of Group IT — Sales, Marketing &amp; Service @ Group IT</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">T.K.</div>
+                <div>
+                  <div class="testimony-author">T.K.</div>
+                  <div class="testimony-role">Head of Group IT — Sales, Marketing &amp; Service</div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -128,17 +181,24 @@
         <!-- SWISS / Lufthansa -->
         <div class="testimony-group">
           <div class="testimony-group-header">
-            <div>
+            <div class="company-logo company-logo--swiss">LX</div>
+            <div class="testimony-group-meta">
               <div class="company">SWISS / Lufthansa Group</div>
               <div class="period">Mobile Apps · Jan. 2017 – May 2020</div>
+              <a href="experience.html#swiss" class="testimony-exp-link">View what I did there →</a>
             </div>
           </div>
           <div class="testimonies">
 
             <div class="testimony">
               <blockquote>Robin contributed at a high functional, solution oriented and structured manner. He adjusted easily to changing requirements and could transform strategic decisions into new directions for his work environment. A brilliant characteristic to find balance between the needed professionalism and strictness in delivering results and a high team spirit. Robin was our trusted go-to Product Owner for the more complex and technical projects.</blockquote>
-              <div class="testimony-author">Stefanie Schweikart</div>
-              <div class="testimony-role">Chief Product Owner, Lufthansa Group App / Team Lead SWISS Mobile Applications</div>
+              <div class="testimony-author-row">
+                <div class="testimony-avatar">S.S.</div>
+                <div>
+                  <div class="testimony-author">S.S.</div>
+                  <div class="testimony-role">Chief Product Owner, Lufthansa Group App / Team Lead SWISS Mobile Applications</div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -161,12 +221,57 @@
 
 <footer>
   <div class="container">
-    Robin Moenne Loccoz &mdash; Senior PM / PO &mdash; <a href="mailto:robin.moenneloccoz@cognizant.com">robin.moenneloccoz@cognizant.com</a>
+    Robin Moenne Loccoz &mdash; Senior PM / PO &mdash; <a href="mailto:moenneloccoz@gmail.com">moenneloccoz@gmail.com</a>
   </div>
 </footer>
 
 <div id="color-picker"></div>
 <script src="nav.js"></script>
-<script src="chat-widget.js"></script>
+
+<style>
+/* ── Testimonial group header ── */
+.testimony-group-header {
+  background: var(--bg-alt); padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 1.25rem;
+}
+
+.testimony-group-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+
+/* ── Company logo badges ── */
+.company-logo {
+  width: 48px; height: 48px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.04em;
+  flex-shrink: 0; border: 1px solid rgba(0,0,0,0.1);
+}
+.company-logo--avolta  { background: #1a1a2e; color: #e8a020; }
+.company-logo--bmw     { background: #1c69d4; color: #ffffff; }
+.company-logo--vaillant{ background: #e30613; color: #ffffff; }
+.company-logo--swiss   { background: #d40000; color: #ffffff; }
+
+/* ── Experience link ── */
+.testimony-exp-link {
+  font-size: 0.72rem; font-weight: 600; color: var(--fg-muted);
+  text-decoration: none; margin-top: 0.1rem;
+  transition: color 0.2s;
+}
+.testimony-exp-link:hover { color: var(--fg); text-decoration: underline; }
+
+/* ── Author row with avatar ── */
+.testimony-author-row {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.testimony-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--border); color: var(--fg-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em;
+  flex-shrink: 0; border: 1px solid var(--border);
+}
+</style>
+
 </body>
 </html>
