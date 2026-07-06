@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robin Moenne Loccoz — Digital Product & Project Consultant</title>
+  <title>Robin Moenne Loccoz — Digital Product &amp; Project Consultant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>#chat-section { scroll-margin-top: 106px; }</style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">
     <span class="nav-logo-main">RML</span>
-    <span class="nav-logo-tag">Shipping great products since 2006</span>
+    <span class="nav-logo-tag">Grossartige Produkte seit 2006</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -24,8 +25,8 @@
   </ul>
   <div style="display:flex;gap:0.75rem;align-items:center;">
     <div class="lang-switcher">
-      <a href="index.html" class="lang-btn active">EN</a>
-      <a href="de/index.html" class="lang-btn">DE</a>
+      <a href="../index.html" class="lang-btn">EN</a>
+      <a href="index.html" class="lang-btn active">DE</a>
     </div>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
     <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
@@ -36,7 +37,7 @@
   <!-- AI Teaser Banner -->
   <div class="ai-teaser" onclick="document.getElementById('chat-section').scrollIntoView({behavior:'smooth'})">
     <span class="ai-teaser-badge">✦ AI</span>
-    <span class="ai-teaser-text">Skip the CV — just ask my AI assistant anything about my work</span>
+    <span class="ai-teaser-text">Lebenslauf überspringen — fragen Sie einfach meinen KI-Assistenten</span>
     <span class="ai-teaser-arrow">↓</span>
   </div>
 
@@ -45,13 +46,13 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="section-label">Independent Consultant · Switzerland</div>
+          <div class="section-label">Unabhängiger Berater · Schweiz</div>
           <h1 class="hero-title">
             <span class="name"><span class="hl">Robin Moenne Loccoz</span></span>
-            <span class="role">Digital Product & Project Consultant · PMP</span>
+            <span class="role">Digital Product &amp; Projektmanagement-Berater · PMP</span>
           </h1>
           <p class="hero-desc">
-            I help global companies ship better digital products, faster. Over 12 years I've served clients across loyalty, e-commerce, banking, automotive and travel — turning complex projects into working software and happy users.
+            Ich helfe globalen Unternehmen, bessere digitale Produkte schneller auf den Markt zu bringen. Seit über 12 Jahren betreue ich Kunden in den Bereichen Loyalty, E-Commerce, Banking, Automotive und Travel — und verwandle komplexe Projekte in funktionierende Software und zufriedene Nutzer.
           </p>
           <div class="hero-tags">
             <span class="tag">Product Management</span>
@@ -65,8 +66,8 @@
             <span class="tag">Agentic AI</span>
           </div>
           <div class="hero-btns">
-            <a href="experience.html" class="btn btn-primary">View Client Work →</a>
-            <a href="contact.html" class="btn btn-secondary">Work with me</a>
+            <a href="experience.html" class="btn btn-primary">Referenzprojekte →</a>
+            <a href="contact.html" class="btn btn-secondary">Mit mir arbeiten</a>
           </div>
 
           <!-- Contact strip -->
@@ -85,21 +86,21 @@
         <!-- Photo + stats -->
         <div class="hero-right">
           <div class="hero-photo-wrap">
-            <img src="robin.jpg" alt="Robin Moenne Loccoz" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <img src="../robin.jpg" alt="Robin Moenne Loccoz" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
             <div class="hero-photo-placeholder">RML</div>
           </div>
           <div class="hero-stats">
             <div class="stat-card">
               <span class="stat-number">12+</span>
-              <div class="stat-label">Years leading digital products</div>
+              <div class="stat-label">Jahre in der digitalen Produktentwicklung</div>
             </div>
             <div class="stat-card">
               <span class="stat-number">40+</span>
-              <div class="stat-label">FTEs managed globally</div>
+              <div class="stat-label">FTEs weltweit geführt</div>
             </div>
             <div class="stat-card">
               <span class="stat-number">6</span>
-              <div class="stat-label">Industries served</div>
+              <div class="stat-label">Branchen</div>
             </div>
             <div class="stat-card">
               <span class="stat-number">3</span>
@@ -117,25 +118,25 @@
       <div class="chat-cta-wrap">
         <div class="chat-cta-left">
           <div class="section-label" style="border-color: var(--hl);">Powered by Claude AI</div>
-          <h2>Have a question about my work?</h2>
-          <p style="margin-top:0.5rem;max-width:480px;">My AI assistant knows my entire career history, client engagements, and skill set. Ask it anything — it's faster than reading the CV and marginally funnier.</p>
+          <h2>Haben Sie eine Frage zu meiner Arbeit?</h2>
+          <p style="margin-top:0.5rem;max-width:480px;">Mein KI-Assistent kennt meinen gesamten Werdegang und meine Kompetenzen. Fragen Sie einfach — es ist schneller als den Lebenslauf zu lesen.</p>
         </div>
         <div class="chat-cta-right">
           <div class="chat-inline-suggestions">
-            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">What industries have you worked in?</button>
-            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">Have you led large remote teams?</button>
-            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">Are you available for new projects?</button>
-            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">What's your biggest success story?</button>
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">In welchen Branchen haben Sie gearbeitet?</button>
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">Haben Sie grosse Remote-Teams geleitet?</button>
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">Stehen Sie für neue Projekte zur Verfügung?</button>
+            <button class="chat-suggestion" onclick="openChatWith(this.textContent)">Was war Ihr grösster Erfolg?</button>
           </div>
           <div class="chat-inline-input-row">
             <input
               id="chat-inline-input"
               type="text"
-              placeholder="Ask Robin's AI assistant anything…"
+              placeholder="Fragen Sie Robins KI-Assistenten…"
               maxlength="500"
               onkeydown="if(event.key==='Enter')openChatWith(this.value)"
             />
-            <button class="btn btn-primary" onclick="openChatWith(document.getElementById('chat-inline-input').value)">Ask →</button>
+            <button class="btn btn-primary" onclick="openChatWith(document.getElementById('chat-inline-input').value)">Fragen →</button>
           </div>
         </div>
       </div>
@@ -145,35 +146,35 @@
   <!-- Overview cards -->
   <section style="padding:4rem 0; background:var(--bg-alt); border-bottom:1px solid var(--border);">
     <div class="container">
-      <div class="section-label">What I bring to your project</div>
-      <h2>A track record across industries</h2>
+      <div class="section-label">Was ich mitbringe</div>
+      <h2>Nachgewiesenes Profil über Branchen hinweg</h2>
       <div class="overview-grid">
 
         <a href="experience.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">💼</div>
-          <h3>Client Experience</h3>
-          <p>From Lloyds Banking Group to BMW, Avolta and SWISS — I've led complex digital programmes at global brands and delivered.</p>
+          <h3>Referenzprojekte</h3>
+          <p>Von Lloyds Banking Group bis BMW, Avolta und SWISS — ich habe komplexe digitale Programme für globale Marken geleitet und geliefert.</p>
           <span class="overview-card-link">Explore →</span>
         </a>
 
         <a href="education.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">🎓</div>
-          <h3>Certifications</h3>
-          <p>PMP, SAFe, AWS Cloud Practitioner, Google Cloud Digital Leader, Master's degree from Paris.</p>
+          <h3>Zertifikate</h3>
+          <p>PMP, SAFe, AWS Cloud Practitioner, Google Cloud Digital Leader, Master-Abschluss aus Paris.</p>
           <span class="overview-card-link">Explore →</span>
         </a>
 
         <a href="testimonials.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">💬</div>
-          <h3>Client Testimonials</h3>
-          <p>Don't take my word for it — here's what senior directors and clients have said about working with me.</p>
+          <h3>Referenzen</h3>
+          <p>Nicht nur mein Wort — hier ist, was leitende Direktoren und Kunden über die Zusammenarbeit mit mir sagen.</p>
           <span class="overview-card-link">Read →</span>
         </a>
 
         <a href="contact.html" class="overview-card" style="text-decoration:none;color:inherit;">
           <div class="overview-card-icon">✉</div>
-          <h3>Work with me</h3>
-          <p>Based in Switzerland, available globally. Open to contracts, interim mandates, and consulting engagements.</p>
+          <h3>Kontakt</h3>
+          <p>In der Schweiz ansässig, weltweit verfügbar. Offen für Mandate, Interim-Einsätze und Beratungsprojekte.</p>
           <span class="overview-card-link">Get in touch →</span>
         </a>
 
@@ -184,12 +185,12 @@
   <!-- Industry expertise -->
   <section>
     <div class="container">
-      <div class="section-label">Areas of Expertise</div>
-      <h2 style="margin-bottom:2.5rem;">Skills &amp; Industries</h2>
+      <div class="section-label">Fachgebiete</div>
+      <h2 style="margin-bottom:2.5rem;">Skills &amp; Branchen</h2>
 
       <div class="grid-2" style="gap:3rem;">
         <div>
-          <h3 style="margin-bottom:1rem;">Core Competencies</h3>
+          <h3 style="margin-bottom:1rem;">Kernkompetenzen</h3>
           <div class="pill-grid">
             <span class="tag">Program &amp; project leadership</span>
             <span class="tag">Product ownership</span>
@@ -208,7 +209,7 @@
           </div>
         </div>
         <div>
-          <h3 style="margin-bottom:1rem;">Industries I've Served</h3>
+          <h3 style="margin-bottom:1rem;">Branchen</h3>
           <div class="pill-grid">
             <span class="tag">Loyalty &amp; retail travel</span>
             <span class="tag">E-commerce &amp; marketplace</span>
@@ -225,7 +226,7 @@
 
 <footer>
   <div class="container">
-    Robin Moenne Loccoz &mdash; Digital Product &amp; Project Consultant &mdash;
+    Robin Moenne Loccoz &mdash; Senior PM / PO &mdash;
     <a href="mailto:moenneloccoz@gmail.com">moenneloccoz@gmail.com</a>
   </div>
 </footer>
@@ -237,16 +238,16 @@
   <div id="chat-modal">
     <div id="chat-modal-header">
       <div>
-        <div style="font-weight:700;font-size:0.95rem;">Robin's AI Assistant</div>
-        <div style="font-size:0.75rem;opacity:0.7;">Powered by Claude · Knows everything about Robin</div>
+        <div style="font-weight:700;font-size:0.95rem;">Robin's KI-Assistent · Powered by Claude</div>
+        <div style="font-size:0.75rem;opacity:0.7;">Kennt alles über Robin</div>
       </div>
       <button onclick="closeChatModal()" aria-label="Close">✕</button>
     </div>
     <div id="chat-modal-messages">
-      <div class="chat-msg bot">Hey! I'm Robin's AI assistant — I know his entire career history, skills, and what he's been up to. What would you like to know?</div>
+      <div class="chat-msg bot">Hallo! Ich bin Robins KI-Assistent — ich kenne seinen gesamten Werdegang, seine Kompetenzen und was er zuletzt gemacht hat. Was möchten Sie wissen?</div>
     </div>
     <div id="chat-modal-input-row">
-      <input id="chat-modal-input" type="text" placeholder="Ask anything…" maxlength="500"
+      <input id="chat-modal-input" type="text" placeholder="Fragen Sie alles…" maxlength="500"
         onkeydown="if(event.key==='Enter')sendModalMessage()" autofocus />
       <button onclick="sendModalMessage()" id="chat-modal-send">→</button>
     </div>
@@ -529,6 +530,6 @@ function addModalMessage(text, type) {
 }
 </script>
 
-<script src="nav.js"></script>
+<script src="../nav.js"></script>
 </body>
 </html>
