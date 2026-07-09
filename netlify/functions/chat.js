@@ -53,18 +53,19 @@ Robin is open to consulting contracts, interim PM/PO mandates, and programme lea
 - If in doubt: be the smartest person in the room who is also genuinely trying to help`;
 
 exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
-
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Content-Type': 'application/json',
   };
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
+  }
+
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, headers, body: JSON.stringify({ error: 'Method Not Allowed' }) };
   }
 
   try {
@@ -79,6 +80,10 @@ exports.handler = async (event) => {
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.error('GEMINI_API_KEY is not set');
+      return { statusCode: 500, headers, body: JSON.stringify({ error: 'Server configuration error: API key missing' }) };
+    }
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
     const response = await fetch(url, {
@@ -92,16 +97,17 @@ exports.handler = async (event) => {
           { role: 'user', parts: [{ text: message }] },
         ],
         generationConfig: {
-          maxOutputTokens: 400,
+          maxOutputTokens: 800,
           temperature: 0.7,
+          thinkingConfig: { thinkingBudget: 0 },
         },
       }),
     });
 
     if (!response.ok) {
       const err = await response.text();
-      console.error('Gemini API error:', err);
-      return { statusCode: 500, headers, body: JSON.stringify({ error: 'API error' }) };
+      console.error('Gemini API error:', response.status, err);
+      return { statusCode: 500, headers, body: JSON.stringify({ error: `Gemini API error ${response.status}` }) };
     }
 
     const data = await response.json();
@@ -110,7 +116,7 @@ exports.handler = async (event) => {
     return { statusCode: 200, headers, body: JSON.stringify({ reply }) };
 
   } catch (err) {
-    console.error('Function error:', err);
-    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Something went wrong' }) };
+    console.error('Function error:', err.message || err);
+    return { statusCode: 500, headers, body: JSON.stringify({ error: err.message || 'Something went wrong' }) };
   }
 };
