@@ -6,6 +6,7 @@
   <title>Robin Moenne Loccoz — Digital Product &amp; Project Consultant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../style.css" />
   <style>#chat-section { scroll-margin-top: 106px; }</style>
 </head>
@@ -46,13 +47,13 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="section-label">Unabhängiger Berater · Schweiz</div>
+          <div class="section-label">Senior Digital Consultant · Zürich, Schweiz</div>
           <h1 class="hero-title">
             <span class="name"><span class="hl">Robin Moenne Loccoz</span></span>
             <span class="role">Digital Product &amp; Projektmanagement-Berater · PMP</span>
           </h1>
           <p class="hero-desc">
-            Ich helfe globalen Unternehmen, bessere digitale Produkte schneller auf den Markt zu bringen. Seit über 12 Jahren betreue ich Kunden in den Bereichen Loyalty, E-Commerce, Banking, Automotive und Travel — und verwandle komplexe Projekte in funktionierende Software und zufriedene Nutzer.
+            Ich helfe globalen Unternehmen, bessere digitale Produkte schneller auf den Markt zu bringen — und zunehmend auch smarter. Seit über 12 Jahren betreue ich Kunden in den Bereichen Loyalty, E-Commerce, Banking, Automotive und Travel, und ich bringe heute KI-gestütztes Denken in jeden Einsatz: von agentischen Workflows bis hin zu AI-Produktstrategien.
           </p>
           <div class="hero-tags">
             <span class="tag">Product Management</span>
@@ -72,14 +73,21 @@
 
           <!-- Contact strip -->
           <div class="hero-contact">
-            <a href="mailto:moenneloccoz@gmail.com" class="hero-contact-item">
-              <span class="hero-contact-icon">✉</span>
-              moenneloccoz@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/moenneloccoz/" target="_blank" rel="noopener" class="hero-contact-item">
-              <span class="hero-contact-icon">🔗</span>
-              linkedin.com/in/moenneloccoz
-            </a>
+            <div class="avail-badge">
+              <span class="avail-dot"></span>
+              Offen für neue Mandate
+            </div>
+            <div class="hero-contact-btns">
+              <a href="mailto:moenneloccoz@gmail.com" class="hero-contact-btn" id="email-copy-btn" onclick="copyEmail(event)" title="Klicken zum Kopieren">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span id="email-label">moenneloccoz@gmail.com</span>
+                <svg class="copy-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/moenneloccoz/" target="_blank" rel="noopener" class="hero-contact-btn hero-contact-btn--li">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                linkedin.com/in/moenneloccoz
+              </a>
+            </div>
           </div>
         </div>
 
@@ -99,7 +107,7 @@
               <div class="stat-label">FTEs weltweit geführt</div>
             </div>
             <div class="stat-card">
-              <span class="stat-number">6</span>
+              <span class="stat-number">10+</span>
               <div class="stat-label">Branchen</div>
             </div>
             <div class="stat-card">
@@ -117,7 +125,7 @@
     <div class="container">
       <div class="chat-cta-wrap">
         <div class="chat-cta-left">
-          <div class="section-label" style="border-color: var(--hl);">Powered by Claude AI</div>
+          <div class="section-label" style="border-color: var(--hl);">Powered by Gemini AI</div>
           <h2>Haben Sie eine Frage zu meiner Arbeit?</h2>
           <p style="margin-top:0.5rem;max-width:480px;">Mein KI-Assistent kennt meinen gesamten Werdegang und meine Kompetenzen. Fragen Sie einfach — es ist schneller als den Lebenslauf zu lesen.</p>
         </div>
@@ -238,7 +246,7 @@
   <div id="chat-modal">
     <div id="chat-modal-header">
       <div>
-        <div style="font-weight:700;font-size:0.95rem;">Robin's KI-Assistent · Powered by Claude</div>
+        <div style="font-weight:700;font-size:0.95rem;">Robin's KI-Assistent · Powered by Gemini</div>
         <div style="font-size:0.75rem;opacity:0.7;">Kennt alles über Robin</div>
       </div>
       <button onclick="closeChatModal()" aria-label="Close">✕</button>
@@ -311,19 +319,55 @@
 
 /* ── Hero contact strip ── */
 .hero-contact {
-  display: flex; flex-direction: column; gap: 0.5rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
   margin-top: 2rem; padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
 
-.hero-contact-item {
-  display: flex; align-items: center; gap: 0.6rem;
-  font-size: 0.82rem; color: var(--fg-muted);
-  transition: color 0.2s;
+.avail-badge {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.75rem; font-weight: 600; color: #2d9e5f;
+  letter-spacing: 0.01em;
 }
 
-.hero-contact-item:hover { color: var(--fg); }
-.hero-contact-icon { font-size: 0.9rem; flex-shrink: 0; }
+.avail-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #2d9e5f; flex-shrink: 0;
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45,158,95,0.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(45,158,95,0); }
+}
+
+.hero-contact-btns {
+  display: flex; gap: 0.6rem; flex-wrap: wrap;
+}
+
+.hero-contact-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; font-weight: 600;
+  padding: 0.5rem 1rem; border-radius: 100px;
+  border: 1.5px solid var(--border);
+  color: var(--fg-muted); background: transparent;
+  text-decoration: none;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.15s;
+}
+
+.hero-contact-btn:hover {
+  background: var(--fg); color: var(--bg);
+  border-color: var(--fg); transform: translateY(-1px);
+}
+
+.hero-contact-btn--li:hover {
+  background: #0a66c2; color: #fff; border-color: #0a66c2;
+}
+
+.copy-icon { opacity: 0.35; transition: opacity 0.15s; flex-shrink: 0; }
+.hero-contact-btn:hover .copy-icon { opacity: 0.75; }
+.hero-contact-btn.copied { background: #2d9e5f; color: #fff; border-color: #2d9e5f; }
+.hero-contact-btn.copied .copy-icon { opacity: 0; }
 
 /* ── AI Chat section ── */
 #chat-section { scroll-margin-top: 106px; }
@@ -460,6 +504,20 @@
 </style>
 
 <script>
+function copyEmail(e) {
+  e.preventDefault();
+  navigator.clipboard.writeText('moenneloccoz@gmail.com').then(() => {
+    const label = document.getElementById('email-label');
+    const btn = document.getElementById('email-copy-btn');
+    label.textContent = 'Kopiert!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      label.textContent = 'moenneloccoz@gmail.com';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
 let messageCount = 0;
 const MAX_MESSAGES = 10;
 

@@ -6,6 +6,7 @@
   <title>Kontakt — Robin Moenne Loccoz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
@@ -37,7 +38,7 @@
     <div class="container">
       <div class="section-label">Kontakt aufnehmen</div>
       <h1><span class="hl">Kontakt</span></h1>
-      <p style="margin-top:0.75rem;max-width:600px;">In der Schweiz ansässig, offen für neue digitale Produkt- und Projektmandate weltweit. Der beste Weg, mich zu erreichen, ist per E-Mail oder LinkedIn.</p>
+      <p style="margin-top:0.75rem;max-width:600px;">In Zürich, Schweiz ansässig, offen für neue digitale Produkt- und Projektmandate weltweit — inklusive KI-gestützter Mandate. Der beste Weg, mich zu erreichen, ist per E-Mail oder LinkedIn.</p>
     </div>
   </div>
 
@@ -50,17 +51,24 @@
           <h2 style="margin-bottom:2rem;">Kontakt aufnehmen</h2>
 
           <div class="contact-item">
-            <div class="contact-icon">✉</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
             <div>
               <div class="contact-label">E-Mail</div>
               <div class="contact-value">
-                <a href="mailto:moenneloccoz@gmail.com">moenneloccoz@gmail.com</a>
+                <a href="mailto:moenneloccoz@gmail.com" id="contact-email-link" onclick="copyContactEmail(event)" title="Klicken zum Kopieren" style="display:inline-flex;align-items:center;gap:0.4rem;">
+                  <span id="contact-email-label">moenneloccoz@gmail.com</span>
+                  <svg id="contact-copy-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.4;flex-shrink:0"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </a>
               </div>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">🔗</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
             <div>
               <div class="contact-label">LinkedIn</div>
               <div class="contact-value">
@@ -70,15 +78,19 @@
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
             <div>
               <div class="contact-label">Standort</div>
-              <div class="contact-value">Schweiz (offen für globale Mandate)</div>
+              <div class="contact-value">Zürich, Schweiz (offen für globale Mandate)</div>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">🌐</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
             <div>
               <div class="contact-label">Sprachen</div>
               <div class="contact-value">Englisch · Französisch · Deutsch (C1)</div>
@@ -90,10 +102,10 @@
         <div style="padding:2.5rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-alt);">
           <div class="section-label" style="margin-bottom:1rem;">Kurzprofil</div>
           <p style="font-size:0.95rem;line-height:1.8;color:var(--fg);">
-            Erfahrener und leidenschaftlicher Product- und Projektleiter, der komplexe Herausforderungen in digitale Produkte mit echtem Business Impact und aussergewöhnlichen User Experiences verwandelt.
+            Erfahrener und leidenschaftlicher Product- und Projektleiter, der komplexe Herausforderungen in digitale Produkte mit echtem Business Impact und aussergewöhnlichen User Experiences verwandelt — mit einem starken Fokus auf KI-gestützte Produkte und agentische Systeme.
           </p>
           <p style="font-size:0.95rem;line-height:1.8;margin-top:1rem;color:var(--fg);">
-            Ich habe grosse Initiativen für globale Marken in mehreren Branchen geleitet — darunter Lloyds Banking Group, BMW, SWISS und Avolta — und dabei Millionen von Nutzern weltweit erreicht. Bekannt für die Revitalisierung von leistungsschwachen Projekten, verbinde ich einen transparenten Kommunikationsstil, eine hands-on Einstellung und ein agiles Mindset.
+            Ich habe grosse Initiativen für globale Marken geleitet — darunter Lloyds Banking Group, BMW, SWISS und Avolta — und dabei Millionen von Nutzern weltweit erreicht. Bekannt für die Revitalisierung von leistungsschwachen Projekten, verbinde ich einen transparenten Kommunikationsstil, eine hands-on Einstellung und ein agiles Mindset — und bringe heute generative KI in jeden Einsatz.
           </p>
           <div class="divider" style="margin:1.5rem 0;"></div>
           <div class="section-label" style="margin-bottom:0.75rem;">Verfügbar für</div>
@@ -103,10 +115,13 @@
             <span class="tag">Product Owner</span>
             <span class="tag">Digitale Transformation</span>
             <span class="tag">Agile Führung</span>
+            <span class="tag ai-tag">KI-Produktstrategie</span>
+            <span class="tag ai-tag">Agentic AI</span>
           </div>
           <div style="margin-top:2rem;">
-            <a href="mailto:moenneloccoz@gmail.com" class="btn btn-primary" style="width:100%;justify-content:center;">
-              E-Mail senden →
+            <a href="mailto:moenneloccoz@gmail.com" id="contact-cta-btn" onclick="copyContactEmail(event)" class="btn btn-primary" style="width:100%;justify-content:center;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span id="contact-cta-label">E-Mail senden →</span>
             </a>
           </div>
         </div>
@@ -124,5 +139,20 @@
 
 <div id="color-picker"></div>
 <script src="../nav.js"></script>
+<script>
+function copyContactEmail(e) {
+  e.preventDefault();
+  navigator.clipboard.writeText('moenneloccoz@gmail.com').then(() => {
+    const label = document.getElementById('contact-email-label');
+    const ctaLabel = document.getElementById('contact-cta-label');
+    if (label) label.textContent = 'Kopiert!';
+    if (ctaLabel) ctaLabel.textContent = 'Kopiert! ✓';
+    setTimeout(() => {
+      if (label) label.textContent = 'moenneloccoz@gmail.com';
+      if (ctaLabel) ctaLabel.textContent = 'E-Mail senden →';
+    }, 2000);
+  });
+}
+</script>
 </body>
 </html>

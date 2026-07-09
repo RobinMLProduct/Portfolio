@@ -1,33 +1,58 @@
 // ── Theme toggle ──────────────────────────────────────────────
 const THEME_KEY = 'portfolio-theme';
 const COLOR_KEY = 'portfolio-hl';
-
-const THEME_CYCLE = ['light', 'dark', 'ascii'];
-const THEME_ICONS = { light: '☾', dark: '▓', ascii: '☀' };
-const THEME_TITLES = { light: 'Dark mode', dark: 'ASCII mode', ascii: 'Light mode' };
+const ASCII_KEY = 'portfolio-ascii';
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   const btn = document.getElementById('themeToggle');
-  if (btn) {
-    btn.textContent = THEME_ICONS[theme] || '☾';
-    btn.title = THEME_TITLES[theme] || '';
-  }
+  if (btn) btn.textContent = theme === 'dark' ? '☀' : '☾';
   if (theme === 'ascii') buildAsciiPhoto();
 }
 
 function initTheme() {
   const saved = localStorage.getItem(THEME_KEY);
   const pref  = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  applyTheme(saved || pref);
+  const base  = (saved === 'dark') ? 'dark' : pref;
+  const ascii = localStorage.getItem(ASCII_KEY) === 'true';
+  applyTheme(ascii ? 'ascii' : base);
+}
+
+function safeBase() {
+  const saved = localStorage.getItem(THEME_KEY);
+  return (saved === 'dark') ? 'dark' : 'light';
 }
 
 function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'light';
-  const idx = THEME_CYCLE.indexOf(current);
-  const next = THEME_CYCLE[(idx + 1) % THEME_CYCLE.length];
+  // If currently in ASCII, exit ASCII and restore saved light/dark
+  const current = document.documentElement.getAttribute('data-theme');
+  if (current === 'ascii') {
+    localStorage.setItem(ASCII_KEY, 'false');
+    applyTheme(safeBase());
+    updateAsciiBtn(false);
+    return;
+  }
+  const next = current === 'dark' ? 'light' : 'dark';
   localStorage.setItem(THEME_KEY, next);
   applyTheme(next);
+}
+
+function toggleAscii() {
+  const current = document.documentElement.getAttribute('data-theme');
+  if (current === 'ascii') {
+    localStorage.setItem(ASCII_KEY, 'false');
+    applyTheme(safeBase());
+    updateAsciiBtn(false);
+  } else {
+    localStorage.setItem(ASCII_KEY, 'true');
+    applyTheme('ascii');
+    updateAsciiBtn(true);
+  }
+}
+
+function updateAsciiBtn(active) {
+  const btn = document.getElementById('ascii-toggle');
+  if (btn) btn.classList.toggle('active', active);
 }
 
 // ── ASCII photo converter ──────────────────────────────────────
@@ -110,9 +135,15 @@ const PALETTES = [
 ];
 
 function applyColor(hex) {
+  // Picking a colour always exits ASCII mode first
+  if (document.documentElement.getAttribute('data-theme') === 'ascii') {
+    localStorage.setItem(ASCII_KEY, 'false');
+    applyTheme(safeBase());
+    updateAsciiBtn(false);
+  }
   document.documentElement.style.setProperty('--hl', hex);
   localStorage.setItem(COLOR_KEY, hex);
-  document.querySelectorAll('.swatch').forEach(s => {
+  document.querySelectorAll('#color-swatches .swatch').forEach(s => {
     s.classList.toggle('active', s.dataset.hex === hex);
   });
 }
@@ -121,30 +152,56 @@ function buildColorPicker() {
   const picker = document.getElementById('color-picker');
   if (!picker) return;
 
+  // Label
   const label = document.createElement('div');
   label.id = 'color-picker-label';
   label.textContent = 'Highlight';
 
-  const swatches = document.createElement('div');
-  swatches.id = 'color-swatches';
+  // Swatches row
+  const row = document.createElement('div');
+  row.id = 'color-swatches';
 
+  // Colour swatches
   PALETTES.forEach(({ name, hex }) => {
     const btn = document.createElement('button');
+    btn.type = 'button';
     btn.className = 'swatch';
     btn.dataset.hex = hex;
     btn.style.background = hex;
     btn.title = name;
-    btn.setAttribute('aria-label', name + ' highlight');
+    btn.setAttribute('aria-label', name);
     btn.addEventListener('click', () => applyColor(hex));
-    swatches.appendChild(btn);
+    row.appendChild(btn);
   });
 
-  picker.appendChild(label);
-  picker.appendChild(swatches);
+  // Visual separator
+  const sep = document.createElement('span');
+  sep.className = 'picker-sep';
+  row.appendChild(sep);
 
-  // Restore saved or default
-  const saved = localStorage.getItem(COLOR_KEY) || PALETTES[0].hex;
-  applyColor(saved);
+  // ASCII toggle button
+  const asciiBtn = document.createElement('button');
+  asciiBtn.type = 'button';
+  asciiBtn.id = 'ascii-toggle';
+  asciiBtn.className = 'ascii-btn';
+  asciiBtn.textContent = '>_';
+  asciiBtn.title = 'ASCII mode';
+  asciiBtn.setAttribute('aria-label', 'Toggle ASCII mode');
+  asciiBtn.addEventListener('click', toggleAscii);
+  row.appendChild(asciiBtn);
+
+  picker.appendChild(label);
+  picker.appendChild(row);
+
+  // Restore saved colour without triggering ASCII exit
+  const savedHex = localStorage.getItem(COLOR_KEY) || PALETTES[0].hex;
+  document.documentElement.style.setProperty('--hl', savedHex);
+  document.querySelectorAll('#color-swatches .swatch').forEach(s => {
+    s.classList.toggle('active', s.dataset.hex === savedHex);
+  });
+
+  // Restore ASCII button active state
+  if (localStorage.getItem(ASCII_KEY) === 'true') updateAsciiBtn(true);
 }
 
 // ── Init ──────────────────────────────────────────────────────
